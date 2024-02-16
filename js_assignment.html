@@ -1,0 +1,756 @@
+1> What is JavaScript?
+
+=> JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every
+time a web page does more than just sit there and display static information for you to look at — displaying timely
+content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that
+JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which
+(HTML and CSS) we have covered in much more detail in other parts of the Learning Area.
+
+
+
+2> What is the use of isNaN function?
+
+=> In JavaScript NaN is short for "Not-a-Number".
+The isNaN() method returns true if a value is NaN.
+The isNaN() method converts the value to a number before testing it.
+
+
+
+3> What is negative Infinity?
+
+=> NEGATIVE_INFINITY is a property of the JavaScript Number object.
+It can be explained as a number that is lower than any other number. It is a Read-Only property. Syntax:
+NEGATIVE_INFINITY is a static property of the NUMBER object and hence is always used with reference to it
+
+
+
+4> Which company developed JavaScript?
+
+=>J avaScript was invented by Brendan Eich in 1995. It was developed for Netscape 2, and became the ECMA-262 standard in
+1997. After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued to develop JavaScript for the
+Firefox browser.
+
+
+5> What are undeclared and undefined variables?
+
+=> An undefined variable is one that has been declared but does not have a value.
+=> It occurs when we try to access any variable that is not initialized or declared earlier using the var or const
+keyword. If we use "typeof" operator to get the value of an undeclared variable, we will face the runtime error with the
+return value as “undefined”. The scope of the undeclared variables is always global.
+
+
+6> Write the code for adding new elements dynamically?
+<h1 style="color:green;">
+    GeeksforGeeks
+</h1>
+
+<!-- Form to add item -->
+<form action="#">
+
+    <!-- Type of Element -->
+    <label for="type">
+        Add Element Type
+    </label>
+
+    <input type="text" id="type" placeholder="Like: div, h1, li...." value="li" />
+    <br /><br />
+
+    <!-- Text/Value for the element --->
+    <label for="value">
+        Add Element Value
+    </label>
+
+    <input type="text" id="value" placeholder="Like: Hello GeeksForGeeks" value="CHILD 2" />
+    <br /><br />
+
+    <!-- Submit the Form -->
+    <button type="button" onClick="addItem()">
+        Add
+    </button>
+</form>
+
+<!-- Parent tag where we add 
+		item as child -->
+<ol id="parent">
+    <li>List Item 1</li>
+</ol>
+
+<script>
+    // Define the addItem() function 
+    // to be called through onclick 
+    function addItem() {
+
+        // Get type of element from form 
+        let type = document.
+            getElementById("type").value;
+
+        // Get the text/value for the tag 
+        // from the form 
+        let value = document.
+            getElementById("value").value;
+
+        // createElement() is used for 
+        // creating a new element 
+        type
+            = document.createElement(type);
+
+        // Use value as textnode in this example 
+        type.appendChild(
+            document.createTextNode(value));
+
+        // Append as child to the parent 
+        // tag i.e. ol 
+        document.getElementById(
+            "parent").appendChild(type);
+    } 
+</script>
+
+
+
+7> What is the difference between ViewState and SessionState?
+
+=> SessionState:
+
+Can be persisted in memory, which makes it a fast solution. Which means state cannot be shared in the Web Farm/Web
+Garden.
+Can be persisted in a Database, useful for Web Farms / Web Gardens.
+Is Cleared when the session dies - usually after 20min of inactivity.
+
+
+ViewState:
+
+Is sent back and forth between the server and client, taking up bandwidth.
+Has no expiration date.
+Is useful in a Web Farm / Web Garden
+
+
+
+8> What is === operator?
+
+=> strict equality (===)
+The strict equality (===) operator checks whether its two operands are equal, returning a Boolean result. Unlike the
+equality operator, the strict equality operator always considers operands of different types to be different.
+
+
+
+9> How can the style/class of an element be changed?
+
+=> We can change, add or remove any CSS property from an HTML element on the occurrence of any event with the help of
+JavaScript. There are two common approaches that allow us to achieve this task.
+
+1. style.property
+2. Changing the class itself
+
+Approach 1: Changing CSS with the help of the style property:
+
+Syntax:
+
+document.getElementById("id").style.property = new_style
+
+
+Approach 2: Changing the class itself We can use two properties that can be used to manipulate the classes.
+
+The classList Property: The classList is a read-only property that returns the CSS class names of an element as a
+DOMTokenList object.
+
+Syntax:
+
+document.getElementById("id").classList
+
+
+
+
+10> How to read and write a file using JavaScript?
+
+=> The fs.readFile() and rs.writeFile() methods are used to read and write of a file using javascript. The file is read
+using the fs.readFile() function, which is an inbuilt method. This technique reads the full file into memory and stores
+it in a buffer.
+
+Syntax:
+
+fs.readFile( file_name, encoding, callback_function )
+
+
+
+11> What are all the looping structures in JavaScript?
+
+=> The JavaScript loops are used to iterate the piece of code using for, while, do while or for-in loops. It makes the
+code compact. It is mostly used in array. There are four types of loops in JavaScript. The JavaScript for loop iterates
+the elements for the fixed number of times. It should be used if number of iteration is known.
+
+loops name : for-in
+for-out
+for-each
+while
+do-while
+
+
+12> How can you convert the string of any base to an integer in JavaScript?
+
+=> console.log(parseInt("100", 10))
+console.log(parseInt("10", 8))
+console.log(parseInt("101", 2))
+console.log(parseInt("2FF3", 16))
+console.log(parseInt("ZZ", 36))
+
+
+13> What is the function of the delete operator?
+
+=> In JavaScript, the delete Operator"s main purpose is to remove a property from an object.
+
+Syntax:
+delete object
+// or
+delete object.property
+// or
+delete object['property']
+
+
+14> What are all the types of Pop up boxes available in JavaScript?
+
+=> JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+
+
+
+15> What is the use of Void (0)?
+
+=> The void operator evaluates the given expression and then returns undefined.
+
+The void operator is often used merely to obtain the undefined primitive value, usually using “void(0)” (which is
+equivalent to “void 0”). In these cases, the global variable undefined can be used instead (assuming it has not been
+assigned to a non-default value).
+
+
+16> How can a page be forced to load another page in JavaScript?
+
+=> In JavaScript, you can force a page to load another page by using the window.location object. There are a few methods
+to achieve this. To force a page to load another page in JavaScript, Below are the approaches used to force a page to
+load another page in JavaScript:
+
+Table of Content
+
+Using window.location.replace
+Using window.location.assign Property
+
+
+17> What are the disadvantages of using innerHTML in JavaScript?
+
+=> Disadvantages of using innerHTML property in JavaScript:
+The use of innerHTML very slow: The process of using innerHTML is much slower as its contents as slowly built, also
+already parsed contents and elements are also re-parsed which takes time.
+
+=> Preserves event handlers attached to any DOM elements: The event handlers do not get attached to the new elements
+created by setting innerHTML automatically. To do so one has to keep track of the event handlers and attach it to new
+elements manually. This may cause a memory leak on some browsers.
+
+=> Content is replaced everywhere: Either you add, append, delete or modify contents on a webpage using innerHTML, all
+contents is replaced, also all the DOM nodes inside that element are reparsed and recreated.
+
+=> Appending to innerHTML is not supported: Usually, += is used for appending in JavaScript. But on appending to an Html
+tag using innerHTML, the whole tag is re-parsed.
+
+
+18> hide -show password program:
+
+=> 
+    
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <style>
+            .box{
+             margin: 5% 30%;
+             padding: 10% 10%;
+             height: 30%;
+             /* border: 2px solid red; */
+             background-color: rgb(225, 199, 199);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="box">
+       <input type="password" name="pass" id="pass">
+        <button id="btn" onclick="showhide()"></button>
+        </div> -->
+    
+        <div class="box">
+            <input type="password" name="" id="pass">
+            <button id="btn" onclick="showhide()"><i class="fa-solid fa-eye"></i></button>
+        </div>
+    
+        <script>
+    
+         var pass = document.getElementById('pass')
+         var btn = document.getElementById('btn')
+    
+         let showhide =() =>{
+            var type = pass.getAttribute('type')
+            // document.write(type)
+    
+            if (type == 'password' ){
+                pass.setAttribute('type', 'text')
+                document.getElementById('btn').innerHTML = '<i class="fa-sharp fa-solid fa-eye-slash"></i>'
+            }
+    
+            else{
+                pass.setAttribute('type','password')
+                document.getElementById('btn').innerHTML = '<i class="fa-solid fa-eye"></i>'
+            }
+         }
+    
+        </script>
+    </body>
+    </html>
+
+
+
+    19> Create basic math operation in JS:
+
+    => <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- <link rel="stylesheet" href="cal.css"> -->
+        <style>
+            .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+      }
+      
+      .calculator {
+        background-color: rgb(44, 45, 46);
+        border-radius: 15px;
+        padding: 15px;
+      }
+      .calculator form input {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background: transparent;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+        box-shadow: -5px -6px 15px black;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+      }
+      
+      form .display {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+      }
+      form .display input {
+        text-align: right;
+        flex: 1;
+        font-size: 30px;
+        padding-right: 10px;
+      }
+      
+      .calculator form input.equal {
+        width: 45%;
+      }
+      
+      form input.operator {
+       color: #33ffd8;
+      }
+      
+        </style>
+    
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculator">
+                <form action="#">
+                    <div class="display">
+                        <input type="text" name="display" id="inputbox" placeholder="0">
+                    </div>
+                    <div>
+                        <input type="button" value="Ac" class="operator"  onclick="clearN()">
+                        <input type="button" value="DE" class="operator" onclick="removeData()" >
+                        <input type="button" value="." class="operator" onclick="displayN('.')" >
+                        <input type="button" value="/" class="operator" onclick="displayN('/')" >
+                    </div>
+                    <div>
+                        <input type="button" value="7" onclick="displayN('7')"  >
+                        <input type="button" value="8" onclick="displayN('8')" >
+                        <input type="button" value="9" onclick="displayN('9')" >
+                        <input type="button" value="*" class="operator" onclick="displayN('*')"  >
+                    </div>
+                    <div>
+                        <input type="button" value="4" onclick="displayN('4')">
+                        <input type="button" value="5"  onclick="displayN('5')">
+                        <input type="button" value="6"  onclick="displayN('6')">
+                        <input type="button" value="-" class="operator" onclick="displayN('-')" >
+                    </div>
+                    <div>
+                        <input type="button" value="1"  onclick="displayN('1')">
+                        <input type="button" value="2" onclick="displayN('2')">
+                        <input type="button" value="3"  onclick="displayN('3')" >
+                        <input type="button" value="+"  class="operator" onclick="displayN('+')">
+                    </div>
+                    <div>
+                        <input type="button" value="00"   onclick="displayN('00')">
+                        <input type="button" value="0" onclick="displayN('0')" >
+                        <input type="button" value="="  onclick="cal()">
+                    </div>     
+                </form>
+            </div>
+        </div>
+      <script>
+    
+           const displayN = (val) => {
+                   console.log(val);
+                   document.getElementById('inputbox').value += val
+           }
+    
+    
+           const cal = () => {
+                var total = eval(document.getElementById('inputbox').value)   // eval = automatic operation karine ape 
+                console.log(total);
+                document.getElementById('inputbox').value = total
+           }
+    
+           const clearN = () =>{
+                document.getElementById('inputbox').value = ''
+           }
+    
+           const removeData = () =>{
+              var data = document.getElementById('inputbox').value
+              var splitData =  data.split('')
+              splitData.pop()
+              var strData= splitData.join('')
+               document.getElementById('inputbox').value = strData
+           }
+    
+      </script>
+    
+     
+         
+    </body>
+    </html>
+    </body>
+    </html>
+
+
+    20> Create result:
+
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+" />
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">c</th>
+                <th scope="col">c++</th>
+                <th scope="col">python</th>
+                <th scope="col">java</th>
+                <th scope="col">UI</th>
+
+                <th scope="col">Total</th>
+                <th scope="col">percentage</th>
+                <th scope="col">grade</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nency</td>
+                <td><input type="text" id="m_m" onchange="cal1()" /></td>
+                <td><input type="text" id="m_s" onchange="cal1()" /></td>
+                <td><input type="text" id="m_b" onchange="cal1()" /></td>
+                <td><input type="text" id="m_c" onchange="cal1()" /></td>
+                <td><input type="text" id="m_p" onchange="cal1()" /></td>
+
+
+                <td id="m_t"></td>
+                <td id="m_per"></td>
+                <td id="m_grd"></td>
+
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Abhi</td>
+                <td><input type="text" id="h_s" onchange="cal2()" /></td>
+                <td><input type="text" id="h_m" onchange="cal2()" /></td>
+                <td><input type="text" id="h_b" onchange="cal2()" /></td>
+                <td><input type="text" id="h_c" onchange="cal2()" /></td>
+                <td><input type="text" id="h_p" onchange="cal2()" /></td>
+                <td id="h_t"></td>
+                <td id="h_per"></td>
+                <td id="h_grd"></td>
+
+
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dhwani</td>
+                <td><input type="text" id="u_m" onchange="cal3()" /></td>
+                <td><input type="text" id="u_s" onchange="cal3()" /></td>
+                <td><input type="text" id="u_b" onchange="cal3()" /></td>
+                <td><input type="text" id="u_c" onchange="cal3()" /></td>
+                <td><input type="text" id="u_p" onchange="cal3()" /></td>
+                <td id="u_t"></td>
+                <td id="u_per"></td>
+                <td id="u_grd"></td>
+
+
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Alay</td>
+                <td><input type="text" id="a_m" onchange="cal4()" /></td>
+                <td><input type="text" id="a_s" onchange="cal4()" /></td>
+                <td><input type="text" id="a_b" onchange="cal4()" /></td>
+                <td><input type="text" id="a_c" onchange="cal4()" /></td>
+                <td><input type="text" id="a_p" onchange="cal4()" /></td>
+                <td id="a_t"></td>
+                <td id="a_per"></td>
+                <td id="a_grd"></td>
+
+
+
+            </tr>
+           
+        </tbody>
+    </table>
+
+    <script>
+        function cal1(event) {
+            var math = document.getElementById('m_m').value
+            var scie = document.getElementById('m_s').value
+            var bio = document.getElementById('m_b').value
+            var chem = document.getElementById('m_c').value
+            var phy = document.getElementById('m_p').value
+
+
+           let totall= document.getElementById('m_t').innerText = Number(math) + Number(scie) + Number(bio) + Number(chem) + Number(phy)
+
+           let percent = document.getElementById('m_per').innerText = (Number(totall) / 500) *100
+
+            let grade;
+            if (percent >= 90) {
+                grade = 'A+';
+            } else if (percent >= 80) {
+                grade = 'A';
+            } else if (percent >= 70) {
+                grade = 'B';
+            } else if (percent >= 60) {
+                grade = 'C';
+            } else if (percent >= 50) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+            grade = document.getElementById('m_grd').innerText = grade
+            
+
+        }
+
+         function cal2(event) {
+                var math = document.getElementById('h_m').value
+                var scie = document.getElementById('h_s').value
+                var bio = document.getElementById('h_b').value
+                var chem = document.getElementById('h_c').value
+                var phy = document.getElementById('h_p').value
+
+
+               let totall = document.getElementById('h_t').innerText = Number(math) + Number(scie) + Number(bio) + Number(chem) + Number(phy)
+               let percent = document.getElementById('h_per').innerText = (Number(totall) / 500) * 100
+
+            let grade;
+             if (percent >= 90) {
+                 grade = 'A+';
+             } else if (percent >= 80) {
+                 grade = 'A';
+             } else if (percent >= 70) {
+                 grade = 'B';
+             } else if (percent >= 60) {
+                 grade = 'C';
+             } else if (percent >= 50) {
+                 grade = 'D';
+             } else {
+                 grade = 'F';
+             }
+             grade = document.getElementById('h_grd').innerText = grade            
+
+            }
+         function cal3(event) {
+                var math = document.getElementById('u_m').value
+                var scie = document.getElementById('u_s').value
+                var bio = document.getElementById('u_b').value
+                var chem = document.getElementById('u_c').value
+                var phy = document.getElementById('u_p').value
+
+
+               let totall = document.getElementById('u_t').innerText = Number(math) + Number(scie) + Number(bio) + Number(chem) + Number(phy)
+           let percent = document.getElementById('u_per').innerText = (Number(totall) / 500) * 100
+
+           let grade;
+             if (percent >= 90) {
+                 grade = 'A+';
+             } else if (percent >= 80) {
+                 grade = 'A';
+             } else if (percent >= 70) {
+                 grade = 'B';
+             } else if (percent >= 60) {
+                 grade = 'C';
+             } else if (percent >= 50) {
+                 grade = 'D';
+             } else {
+                 grade = 'F';
+             }
+             grade = document.getElementById('u_grd').innerText = grade       
+
+            }
+
+            function cal4(event) {
+                    var math = document.getElementById('a_m').value
+                    var scie = document.getElementById('a_s').value
+                    var bio = document.getElementById('a_b').value
+                    var chem = document.getElementById('a_c').value
+                    var phy = document.getElementById('a_p').value
+
+
+                   let totall = document.getElementById('a_t').innerText = Number(math) + Number(scie) + Number(bio) + Number(chem) + Number(phy)
+           let percent = document.getElementById('a_per').innerText = (Number(totall) / 500) * 100
+
+           let grade;
+                if (percent >= 90) {
+                    grade = 'A+';
+                } else if (percent >= 80) {
+                    grade = 'A';
+                } else if (percent >= 70) {
+                    grade = 'B';
+                } else if (percent >= 60) {
+                    grade = 'C';
+                } else if (percent >= 50) {
+                    grade = 'D';
+                } else {
+                    grade = 'F';
+                }
+                grade = document.getElementById('a_grd').innerText = grade       
+
+                }
+    </script>
+</body>
+
+</html>
+
+
+
+21> create slider:
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="practical_4.css">
+</head>
+
+<body>
+    <h1>JavaScript Slider</h1>
+    <div class="maindiv">
+        <div class="cards-wrapper">
+            <ul class="cards__container">
+                <li class="box box1">box 1</li>
+                <li class="box box2">box 2</li>
+                <li class="box box3">box 3</li>
+                <li class="box box4">box 4</li>
+                <li class="box box5">box 5</li>
+                <li class="box box6 box--hide">box 6</li>
+                <li class="box box7 box--hide">box 7</li>
+            </ul>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="button" onclick="LeftMove()">&lt;</div>
+        <div class="button" onclick="shiftRight()">&gt;</div>
+    </div>
+
+    <script>
+        function LeftMove() {
+            const boxes = document.querySelectorAll(".box");
+            const tmpNode = boxes[0];
+            boxes[0].className = "box move-out-from-left";
+
+            setTimeout(function () {
+                if (boxes.length > 5) {
+                    tmpNode.classList.add("box--hide");
+                    boxes[5].className = "box move-to-position5-from-left";
+                }
+                boxes[1].className = "box move-to-position1-from-left";
+                boxes[2].className = "box move-to-position2-from-left";
+                boxes[3].className = "box move-to-position3-from-left";
+                boxes[4].className = "box move-to-position4-from-left";
+                boxes[0].remove();
+
+                document.querySelector(".cards__container").appendChild(tmpNode);
+
+            }, 500);
+
+        }
+
+        function shiftRight() {
+            const boxes = document.querySelectorAll(".box");
+            boxes[4].className = "box move-out-from-right";
+            setTimeout(function () {
+                const noOfCards = boxes.length;
+                if (noOfCards > 4) {
+                    boxes[4].className = "box box--hide";
+                }
+
+                const tmpNode = boxes[noOfCards - 1];
+                tmpNode.classList.remove("box--hide");
+                boxes[noOfCards - 1].remove();
+                let parentObj = document.querySelector(".cards__container");
+                parentObj.insertBefore(tmpNode, parentObj.firstChild);
+                tmpNode.className = "box move-to-position1-from-right";
+                boxes[0].className = "box move-to-position2-from-right";
+                boxes[1].className = "box move-to-position3-from-right";
+                boxes[2].className = "box move-to-position4-from-right";
+                boxes[3].className = "box move-to-position5-from-right";
+            }, 500);
+
+        }
+
+    </script>
+</body>
+
+</html>
